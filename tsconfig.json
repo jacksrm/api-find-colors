@@ -10,7 +10,9 @@
     "module": "commonjs",
     "rootDir": "./src",
     "baseUrl": "./src",
-    "paths": {},
+    "paths": {
+      "@utils/*": ["./utils/*"]
+    },
     "resolveJsonModule": true,
     "allowJs": true,
     "outDir": "./dist",
@@ -19,5 +21,11 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true
-  }
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
