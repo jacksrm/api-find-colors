@@ -1,9 +1,9 @@
 import express, { Request, Response } from 'express';
 import fs from 'fs';
 
-function pesquisa(match: string, coresData: any[]) {
+function pesquisaCor(match: string, coresData: any[]) {
   const cor = coresData.find((cor) => {
-    return new RegExp(match, 'i').test(cor);
+    return new RegExp(match, 'i').test(cor.name);
   });
 
   return cor;
@@ -19,7 +19,13 @@ app.get('/', (req: Request, res: Response) => {
   });
   const coresData = JSON.parse(coresDataFile);
 
-  return res.status(200).json({ cores: coresData });
+  const { pesquisa } = req.query
+
+  if (!pesquisa) return res.status(200).json({ cores: coresData });
+
+  const cor = pesquisaCor(pesquisa as string, coresData);
+
+  return res.status(200).json({ cor });
 });
 
 app.listen(3333, () => {
