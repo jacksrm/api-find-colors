@@ -1,6 +1,14 @@
 import express, { Request, Response } from 'express';
 import fs from 'fs';
 
+function pesquisa(match: string, coresData: any[]) {
+  const cor = coresData.find((cor) => {
+    return new RegExp(match, 'i').test(cor);
+  });
+
+  return cor;
+}
+
 const app = express();
 
 app.use(express.json());
