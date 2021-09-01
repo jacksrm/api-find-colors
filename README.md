@@ -11,12 +11,12 @@ Pata começar a utilizar este projeto basta seguir estes simples passos:
 * Clone o repositório.
 * Entre na pasta do projeto pelo terminal (CMD, PowerShell, Bash, Zsh, etc...).
 * Se estiver usando yarn, no terminal digite:
-  ```zsh
-  > yarn
+  ```console
+  yarn
   ``` 
 * Se estiver usando NPM, no terminal digite:
-  ```zsh
-  > npm i
+  ```console
+  npm i
   ``` 
 * Agora abra o projeto no seu editor de código preferido.
 
